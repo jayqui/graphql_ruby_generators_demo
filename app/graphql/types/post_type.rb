@@ -7,6 +7,7 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :all_caps_title, String, null: true
+    field :url, Types::UrlType, null: true
 
     def all_caps_title
       object.title.upcase
