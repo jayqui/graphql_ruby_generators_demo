@@ -1,3 +1,8 @@
+"""
+An ISO 8601-encoded datetime
+"""
+scalar ISO8601DateTime
+
 type Mutation {
   """
   An example field added by the generator
@@ -5,9 +10,19 @@ type Mutation {
   testField: String!
 }
 
+type Post {
+  allCapsTitle: String
+  content: String
+  createdAt: ISO8601DateTime!
+  id: ID!
+  title: String
+  updatedAt: ISO8601DateTime!
+  userId: Int!
+}
+
 type Query {
   """
-  An example field added by the generator
+  Returns all blog posts
   """
-  testField: String!
+  posts: [Post!]!
 }
