@@ -3,9 +3,20 @@
 #
 # Examples:
 #
-users = User.create([
+users = User.create!([
   { name: 'Jay Quigley', email: 'jay@qu.ig' },
   { name: 'Yelgiuq Yaj', email: 'yel@qu.ig' },
 ])
-Post.create(title: 'I am Jay', content: "My content....", user: users.first)
-Post.create(title: 'I am Yelgiuq', content: "My content....", user: users.second)
+
+Post.create!(
+  title: 'I am Jay',
+  content: "Jay is doing good things....",
+  user: users.first,
+  url: "https://example.com/jay_intro",
+)
+Post.create!(
+  title: 'I am Yelgiuq',
+  content: "Yelgiuq is doing evil things....",
+  user: users.second,
+  url: "https://example.com/yelgiuq_intro",
+)
