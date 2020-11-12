@@ -13,7 +13,7 @@ Post.create!(
   content: "Jay is doing good things....",
   user: users.first,
   url: "https://example.com/jay_intro",
-  variety: "EMAIL",
+  variety: "TEXT",
 )
 Post.create!(
   title: 'I am Yelgiuq',

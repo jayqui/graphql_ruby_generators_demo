@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.belongs_to :user, null: false, foreign_key: true
       t.text :content
       t.string :url
+      t.string :variety
 
       t.timestamps
     end
