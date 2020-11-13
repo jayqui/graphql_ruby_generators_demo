@@ -2,12 +2,10 @@ module Mutations
   class PostCreate < BaseMutation
     field :post, Types::PostType, null: false
 
-    argument :user_id, ID, required: true
-    argument :title, String, required: true
-    argument :content, String, required: true
+    argument :attributes, Types::PostInputType, required: true
 
-    def resolve(user_id:, title:, content:)
-      post = Post.new(user_id: user_id, title: title, content: content)
+    def resolve(attributes:)
+      post = Post.new(attributes.to_h)
 
       if post.save
         { post: post }
